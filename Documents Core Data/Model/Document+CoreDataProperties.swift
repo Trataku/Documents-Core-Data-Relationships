@@ -21,5 +21,5 @@ extension Document {
     @NSManaged public var size: Int64
     @NSManaged public var rawmodificationdate: NSDate?
     @NSManaged public var content: String?
-
+    @NSManaged public var category: Category?
 }

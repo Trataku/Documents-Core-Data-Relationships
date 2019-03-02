@@ -15,6 +15,8 @@ class DocumentTableViewController: UITableViewController {
     var documents = [Document]()
     let dateFormatter = DateFormatter()
     
+    var category: Category?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +27,7 @@ class DocumentTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+        /*guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
             return
         }
         
@@ -38,7 +40,9 @@ class DocumentTableViewController: UITableViewController {
             documentsTableView.reloadData()
         }catch{
             print("Fetch could not be performed")
-        }
+        }*/
+        
+        documentsTableView.reloadData()
         //documents = Documents.get()
     }
     
@@ -52,19 +56,20 @@ class DocumentTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return documents.count
+        return category?.documents?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "documentCell", for: indexPath)
         
-        if let cell = cell as? DocumentTableViewCell {
-            let document = documents[indexPath.row]
-            cell.nameLabel.text = document.name
-            cell.sizeLabel.text = String(document.size) + " bytes"
-            //cell.modificationDateLabel.text = dateFormatter.string(from: document.modificationDate)
-            if let date = document.modificationDate{
-                cell.modificationDateLabel.text = dateFormatter.string(from: date)
+        if let document = category?.documents?[indexPath.row] {
+            if let cell = cell as? DocumentTableViewCell {
+                cell.nameLabel.text = document.name
+                cell.sizeLabel.text = String(document.size) + " bytes"
+                //cell.modificationDateLabel.text = dateFormatter.string(from: document.modificationDate)
+                if let date = document.modificationDate{
+                    cell.modificationDateLabel.text = dateFormatter.string(from: date)
+                }
             }
         }
         
@@ -102,6 +107,7 @@ class DocumentTableViewController: UITableViewController {
         }
         
         destination.existingDocument = documents[selectedRow]
+        destination.category = category
     }
 
 

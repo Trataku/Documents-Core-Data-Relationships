@@ -19,6 +19,10 @@
 		D88467ED2220CDDC003B3475 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88467EC2220CDDC003B3475 /* DocumentTableViewCell.swift */; };
 		D88467F52220E133003B3475 /* Document+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88467F32220E133003B3475 /* Document+CoreDataClass.swift */; };
 		D88467F62220E133003B3475 /* Document+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88467F42220E133003B3475 /* Document+CoreDataProperties.swift */; };
+		D8EABE1B222A0CD3000B125B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EABE1A222A0CD3000B125B /* CategoryTableViewController.swift */; };
+		D8EABE1D222A11D7000B125B /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EABE1C222A11D7000B125B /* NewCategoryViewController.swift */; };
+		D8EABE20222A15FD000B125B /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EABE1E222A15FD000B125B /* Category+CoreDataClass.swift */; };
+		D8EABE21222A15FD000B125B /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EABE1F222A15FD000B125B /* Category+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		D88467EC2220CDDC003B3475 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		D88467F32220E133003B3475 /* Document+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D88467F42220E133003B3475 /* Document+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D8EABE1A222A0CD3000B125B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		D8EABE1C222A11D7000B125B /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
+		D8EABE1E222A15FD000B125B /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D8EABE1F222A15FD000B125B /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,8 @@
 				D88467EE2220D785003B3475 /* Model */,
 				D88467B72220C94E003B3475 /* AppDelegate.swift */,
 				D88467E82220C977003B3475 /* DocumentViewController.swift */,
+				D8EABE1A222A0CD3000B125B /* CategoryTableViewController.swift */,
+				D8EABE1C222A11D7000B125B /* NewCategoryViewController.swift */,
 				D88467EA2220C9FD003B3475 /* DocumentTableViewController.swift */,
 				D88467EC2220CDDC003B3475 /* DocumentTableViewCell.swift */,
 				D88467BB2220C94E003B3475 /* Main.storyboard */,
@@ -142,6 +152,8 @@
 		D88467EE2220D785003B3475 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8EABE1E222A15FD000B125B /* Category+CoreDataClass.swift */,
+				D8EABE1F222A15FD000B125B /* Category+CoreDataProperties.swift */,
 				D88467F32220E133003B3475 /* Document+CoreDataClass.swift */,
 				D88467F42220E133003B3475 /* Document+CoreDataProperties.swift */,
 			);
@@ -280,8 +292,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D88467E92220C977003B3475 /* DocumentViewController.swift in Sources */,
+				D8EABE1D222A11D7000B125B /* NewCategoryViewController.swift in Sources */,
 				D88467F52220E133003B3475 /* Document+CoreDataClass.swift in Sources */,
+				D8EABE20222A15FD000B125B /* Category+CoreDataClass.swift in Sources */,
 				D88467ED2220CDDC003B3475 /* DocumentTableViewCell.swift in Sources */,
+				D8EABE1B222A0CD3000B125B /* CategoryTableViewController.swift in Sources */,
+				D8EABE21222A15FD000B125B /* Category+CoreDataProperties.swift in Sources */,
 				D88467B82220C94E003B3475 /* AppDelegate.swift in Sources */,
 				D88467F62220E133003B3475 /* Document+CoreDataProperties.swift in Sources */,
 				D88467EB2220C9FD003B3475 /* DocumentTableViewController.swift in Sources */,

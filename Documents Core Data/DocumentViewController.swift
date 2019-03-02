@@ -15,6 +15,8 @@ class DocumentViewController: UIViewController {
     
     var existingDocument: Document?
     
+    var category: Category?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +58,17 @@ class DocumentViewController: UIViewController {
             
             document = existingDocument
         }else{
-            document = Document(name: name, size: Int64(sizeOfText), date: currentTime, content: content)
+            if let document = Document(name: name, size: Int64(sizeOfText), date: currentTime, content: content) {
+                category?.addToRawDocuments(document)
+                
+                do{
+                    try document.managedObjectContext?.save()
+                    
+                    self.navigationController?.popViewController(animated: true)
+                } catch {
+                    print("Document could not be created")
+                }
+            }
         }
         
         if let document = document{

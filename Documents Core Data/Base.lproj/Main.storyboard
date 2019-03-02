@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Document Table View Controller-->
+        <!--Documents-->
         <scene sceneID="fCh-wj-0Jx">
             <objects>
                 <tableViewController id="0vE-II-lue" customClass="DocumentTableViewController" customModule="Documents_Core_Data" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                             <outlet property="delegate" destination="0vE-II-lue" id="umG-Ve-6Y4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="e4U-8c-eq7">
+                    <navigationItem key="navigationItem" title="Documents" id="e4U-8c-eq7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mxX-ol-Lz2">
                             <connections>
                                 <segue destination="bFe-Pl-K3g" kind="show" id="fdS-NU-Od8"/>
@@ -100,6 +100,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzC-j3-Ybq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-524" y="129.98500749625188"/>
+        </scene>
+        <!--New Category-->
+        <scene sceneID="tzK-mw-3oD">
+            <objects>
+                <viewController id="Lry-RS-2sM" customClass="NewCategoryViewController" customModule="Documents_Core_Data" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fXm-8x-LXJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZh-vg-18M">
+                                <rect key="frame" x="20" y="84" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5f-if-ukl">
+                                <rect key="frame" x="20" y="113" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w5f-if-ukl" firstAttribute="top" secondItem="aZh-vg-18M" secondAttribute="bottom" constant="8" id="0ZT-A2-PW1"/>
+                            <constraint firstItem="Lv3-9S-w90" firstAttribute="trailing" secondItem="aZh-vg-18M" secondAttribute="trailing" id="7Nj-er-j7M"/>
+                            <constraint firstItem="Lv3-9S-w90" firstAttribute="trailing" secondItem="w5f-if-ukl" secondAttribute="trailing" constant="20" id="ORb-9b-bCo"/>
+                            <constraint firstItem="aZh-vg-18M" firstAttribute="top" secondItem="Lv3-9S-w90" secondAttribute="top" constant="20" id="UIl-HK-tcj"/>
+                            <constraint firstItem="w5f-if-ukl" firstAttribute="leading" secondItem="Lv3-9S-w90" secondAttribute="leading" constant="20" id="ejc-6j-8Z2"/>
+                            <constraint firstItem="aZh-vg-18M" firstAttribute="leading" secondItem="Lv3-9S-w90" secondAttribute="leading" constant="20" id="l9I-I1-9og"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lv3-9S-w90"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Category" id="TVU-bL-Lh4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="E19-0m-uYo">
+                            <connections>
+                                <action selector="saveCategory:" destination="Lry-RS-2sM" id="pSK-9I-2Fu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleTextField" destination="w5f-if-ukl" id="3vN-YW-qOG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWg-8h-sGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-524" y="902"/>
         </scene>
         <!--Title-->
         <scene sceneID="cB2-hW-hXI">
@@ -170,15 +217,65 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0vE-II-lue" kind="relationship" relationship="rootViewController" id="th6-RC-0y0"/>
+                        <segue destination="iuc-wF-XvW" kind="relationship" relationship="rootViewController" id="6lk-m8-sI7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4y-FQ-x0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1374" y="130"/>
+            <point key="canvasLocation" x="-2065" y="132"/>
+        </scene>
+        <!--Document Categories-->
+        <scene sceneID="NOM-py-gt5">
+            <objects>
+                <tableViewController id="iuc-wF-XvW" customClass="CategoryTableViewController" customModule="Documents_Core_Data" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="72y-1J-eYC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="SBL-lP-pvt" style="IBUITableViewCellStyleDefault" id="avD-QO-crn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="avD-QO-crn" id="T4g-RL-KpW">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SBL-lP-pvt">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="0vE-II-lue" kind="show" id="xsf-ZF-NsE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iuc-wF-XvW" id="rQq-d6-Z72"/>
+                            <outlet property="delegate" destination="iuc-wF-XvW" id="vnB-4Y-kjv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Document Categories" id="zGT-5e-NOp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="26V-T6-WdJ">
+                            <connections>
+                                <segue destination="Lry-RS-2sM" kind="show" id="pT3-Bx-d6w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="categoriesTableView" destination="72y-1J-eYC" id="eJK-t6-hnS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="560-Jx-wOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1289" y="132"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fdS-NU-Od8"/>
+        <segue reference="ws0-bE-Jea"/>
     </inferredMetricsTieBreakers>
 </document>
